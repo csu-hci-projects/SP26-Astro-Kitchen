@@ -20,38 +20,31 @@ The full paper is in this submission as `Astro_Kitchen_Final_Report.pdf`.
 
 ## Final Videos
 
-### Project Overview Video (3–5 min, high-level intro to the project)
-- View link: [NEEDS FILL-IN — record and upload]
-- Download link: [NEEDS FILL-IN]
+### Project Overview Video
+- View link: https://drive.google.com/file/d/1Jdaj1kx1a6YQF9d5qS89xLxY-cqTzxec/view?usp=drive_link
+- Download link: https://drive.google.com/file/d/1Jdaj1kx1a6YQF9d5qS89xLxY-cqTzxec/view?usp=drive_link
 
-### Project Code Video (programming walkthrough + who-did-what breakdown)
-- View link: https://colostate-my.sharepoint.com/:v:/g/personal/ziqiuf_colostate_edu/IQD-uye2e-x1S5Cn_hXLgdWuAdeaBHqXmJGy7_HHo_fEpKQ?e=Wimykt
-- Download link: [NEEDS FILL-IN — open the SharePoint link, click "..." menu, copy the direct download URL]
-- **IMPORTANT: confirm the SharePoint link is set to "Anyone with the link can view" — test in an incognito tab before submitting.**
+### Project Code Video
+- View link: https://drive.google.com/file/d/1kbJO-KxmFe48qZJPz73ppXYIjeviGwpJ/view?usp=drive_link
+- Download link: https://drive.google.com/file/d/1kbJO-KxmFe48qZJPz73ppXYIjeviGwpJ/view?usp=drive_link
 
-### Project Presentation Video (~12 minutes recommended)
-- View link: [NEEDS FILL-IN — needs to be recorded]
-- Download link: [NEEDS FILL-IN]
-
-### Gameplay Demonstration (Meta Horizon share)
-- https://horizon.meta.com/shares/VfSWEyO8JiPVyr9eSC8ZrbL9J3RBv6
-- This is a Meta Horizon share link of the prototype in action. Open in any browser.
+### Project Presentation Video
+- View link: [TO BE ADDED before submission]
+- Download link: [TO BE ADDED before submission]
 
 ---
 
 ## Repository / Code Access
 
-### Google Drive (Unity project — full source)
-The Unity project is too large for GitHub due to asset packages, so the full project files are hosted on Google Drive:
+### GitHub
+https://github.com/csu-hci-projects/SP26-Astro-Kitchen/tree/main
 
-https://drive.google.com/drive/folders/15cHUKeBVjdOaMH0dNbuETKHDuV-uW0oU
+### Unity Project (Google Drive)
+The full Unity project is also hosted on Google Drive in case the GitHub repo doesn't include large asset binaries:
 
-This folder also contains the video files. **Confirm sharing is set to "Anyone with the link can view" before submitting.**
+https://drive.google.com/drive/folders/1sQYlzC0NK73HIWJoy-H9i0EbwoaccX4I?usp=drive_link
 
-### GitHub Repository
-[NEEDS FILL-IN — if you have one, paste the URL. If not, mention here that the full source is on the Google Drive linked above.]
-
-### Overleaf (LaTeX source)
+### Overleaf (LaTeX source, view-only)
 https://www.overleaf.com/read/ztmbfrnsfygr#30e992
 
 ### LaTeX Source in this Submission
@@ -71,18 +64,18 @@ To recompile: open in Overleaf or run `pdflatex → bibtex → pdflatex → pdfl
 - A computer running Unity 6 (or later) with Android build support installed
 
 ### Steps
-1. Download the Unity project files from the Google Drive link above
+1. Clone the GitHub repo or download the Unity project files from the Google Drive link above
 2. Open the project in Unity 6
-3. Open the `BasicScene` from `Assets/Scenes/`
-4. Connect a Meta Quest 2 via USB cable (developer mode enabled) or build to an APK
-5. Press Play in the Unity Editor with Quest Link active, or build and install on the headset
+3. Open `BasicScene` from `Assets/Scenes/`
+4. Connect a Meta Quest 2 via USB cable (developer mode enabled), or build to APK and install on the headset
+5. Press Play in the Unity Editor with Quest Link active, or run the installed APK on the headset
 
 ### Controls
-- **Ray-casting mode (default):** point with the controller laser, pull the trigger to grab ingredients, release over the pot/trash to drop
+- **Ray-casting mode (default):** point with the controller laser, pull the trigger to grab ingredients, release over the pot or trash to drop
 - **Head-gaze mode:** turn your head to aim the reticle at an ingredient, press a button on the controller to confirm the selection
 
 ### Recipe gameplay
-Each recipe lists required ingredients (shown on the recipe panel above the cooking station). Pick up the ingredient that matches the current required item and drop it into the pot. Wrong ingredients can be discarded into the trash. Complete the recipe by adding all required ingredients in any order.
+Each recipe lists required ingredients on the recipe panel above the cooking station. Pick up the matching ingredient and drop it into the pot. Wrong ingredients can be discarded into the trash. Complete the recipe by adding all required ingredients in any order.
 
 ---
 
@@ -101,20 +94,11 @@ Sources span:
 
 ## Work Allocation
 
-### Technical Demo / Prototype Development
-- [NEEDS FILL-IN — list who did what on the Unity prototype]
+- **Zachary Kinnaman** — most of the writing and the research paper
+- **Ziqiu Feng** — most of the coding (Unity scripts, VR interaction logic, recipe system) and recorded most of the videos (code overview, project overview, gameplay)
+- **Kyle Wong** — 3D modeling and scene configuration in Unity (kitchen layout, ingredient props, asset arrangement)
 
-### Videos
-- Code overview video: Ziqiu Feng (recorded by Ziqiu)
-- Gameplay demonstration: Ziqiu Feng and Kyle Wong
-- Project overview video: [NEEDS FILL-IN]
-- Presentation video: [NEEDS FILL-IN]
-
-### Research Paper
-- [NEEDS FILL-IN — list who wrote which sections, who did interviews, who did thematic analysis, etc.]
-
-### Study Participants and Interviews
-- [NEEDS FILL-IN — who recruited, who ran sessions, who did the analysis]
+All three group members contributed to study design, running interviews, and thematic analysis.
 
 A more detailed who-did-what breakdown appears at the end of the programming video.
 
@@ -125,7 +109,6 @@ A more detailed who-did-what breakdown appears at the end of the programming vid
 - **Sample size:** 6 participants (qualitative track per the rubric option)
 - **All participants were VR novices** (no prior headset experience). This is a real limitation of the study and is addressed in the Limitations section of the paper.
 - **No eye tracking:** the Quest 2 does not support eye tracking, so our "head-gaze" condition is head-orientation only. The paper makes this explicit.
-- **The Unity project includes the BasicScene that was used during participant testing.** The same scene supports both selection techniques (toggled in code).
 - **If any video link fails for the grader, please contact the group at the emails above and we will provide an alternate link immediately.**
 
 ---
@@ -143,9 +126,6 @@ Astro_Kitchen/
 │   ├── figure-raycast.jpeg
 │   └── figure-unity.jpeg
 ├── PDFs-LiteratureSurvey/                 ← all 24 academic source PDFs
-│   ├── ahmed2025-thematic-analysis.pdf
-│   ├── argelaguet2013-3d-selection-survey.pdf
-│   ├── ... (22 more)
 └── Source_Code/
-    └── github-link.txt                    ← link to Google Drive (Unity project too large to include directly)
+    └── github-and-drive-links.txt         ← link to GitHub and Google Drive
 ```
