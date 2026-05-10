@@ -29,8 +29,8 @@ The full paper is in this submission as `Astro_Kitchen_Final_Report.pdf`.
 - Download link: https://drive.google.com/file/d/1kbJO-KxmFe48qZJPz73ppXYIjeviGwpJ/view?usp=drive_link
 
 ### Project Presentation Video
-- View link: [TO BE ADDED before submission]
-- Download link: [TO BE ADDED before submission]
+- View link: https://drive.google.com/file/d/1awofdR79-GhqXeFVPjJSUVDgiAoNTnX2/view?usp=drive_link
+- Download link: https://drive.google.com/file/d/1awofdR79-GhqXeFVPjJSUVDgiAoNTnX2/view?usp=drive_link
 
 ---
 
