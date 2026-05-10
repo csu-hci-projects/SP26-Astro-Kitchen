@@ -5,43 +5,63 @@ public class ControllerGestureInput : MonoBehaviour
 {
     [Header("References")]
     public ExperimentManager experimentManager;
-    public Behaviour rayLineVisual; // We will drag the Near-Far Interactor here to toggle the line
-    public Animator handAnimator;   // We will drag the LeftHandQuestVisual here
 
     [Header("Controller Input Actions")]
-    public InputActionProperty triggerAction; // Set to XRI Left/Activate
-    public InputActionProperty triggerValue;  // Set to XRI Left/Activate Value (For animations)
-    public InputActionProperty gripAction;    // Set to XRI Left/Select
+    public InputActionProperty triggerAction;
+    public InputActionProperty gripAction;
+    public InputActionProperty primaryButtonAction;
 
     void OnEnable()
     {
-        if (triggerAction.action != null) triggerAction.action.Enable();
-        if (triggerValue.action != null) triggerValue.action.Enable();
-        if (gripAction.action != null) gripAction.action.Enable();
+        EnableAction(triggerAction);
+        EnableAction(gripAction);
+        EnableAction(primaryButtonAction);
+    }
+
+    void OnDisable()
+    {
+        DisableAction(triggerAction);
+        DisableAction(gripAction);
+        DisableAction(primaryButtonAction);
     }
 
     void Update()
     {
         if (experimentManager == null) return;
 
-        // --- 1. TOUCH LOGIC (Press Trigger) ---
-        if (triggerAction.action != null && triggerAction.action.WasPressedThisFrame())
+        if (WasPressedThisFrame(primaryButtonAction))
         {
-            experimentManager.AttemptInteraction(ScreenDisplayController.InteractionMethod.Touch);
+            Debug.Log("PRIMARY BUTTON PRESSED");
+            experimentManager.OnGesturePerformed(ScreenDisplayController.InteractionMethod.ThumbsUp);
         }
 
-        // --- 2. RAY LOGIC (Hold to aim, Release to select) ---
-        if (gripAction.action != null)
+        if (WasPressedThisFrame(triggerAction))
         {
-            // FIRST: Check if they released it and attempt the hit while the ray is still active!
-            if (gripAction.action.WasReleasedThisFrame())
-            {
-                experimentManager.AttemptInteraction(ScreenDisplayController.InteractionMethod.Ray);
-            }
-
-            // SECOND: Now it is safe to turn the ray visual on or off
-            bool isHoldingGrip = gripAction.action.IsPressed();
-            if (rayLineVisual != null) rayLineVisual.enabled = isHoldingGrip;
+            Debug.Log("TRIGGER PRESSED");
+            experimentManager.OnGesturePerformed(ScreenDisplayController.InteractionMethod.Pinch);
         }
+
+        if (WasPressedThisFrame(gripAction))
+        {
+            Debug.Log("GRIP PRESSED");
+            experimentManager.OnGesturePerformed(ScreenDisplayController.InteractionMethod.Grab);
+        }
+    }
+
+    private bool WasPressedThisFrame(InputActionProperty actionProperty)
+    {
+        return actionProperty.action != null && actionProperty.action.WasPressedThisFrame();
+    }
+
+    private void EnableAction(InputActionProperty actionProperty)
+    {
+        if (actionProperty.action != null)
+            actionProperty.action.Enable();
+    }
+
+    private void DisableAction(InputActionProperty actionProperty)
+    {
+        if (actionProperty.action != null)
+            actionProperty.action.Disable();
     }
 }
